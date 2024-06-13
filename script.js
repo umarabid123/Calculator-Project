@@ -56,6 +56,9 @@ function calculateResult() {
       case '/':
           result = prev / curr;
           break;
+          case '%':
+          result = prev % curr;
+          break;
       default:
           return;
   }
