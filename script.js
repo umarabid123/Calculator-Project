@@ -19,6 +19,10 @@ function clearDisplay() {
   updateDisplay();
 }
 
+function DelNumber(){
+  display.value= display.value.slice(0, -1);
+}
+
 function appendNumber(number) {
   if (currentInput === "0") {
     currentInput = number;
@@ -27,6 +31,15 @@ function appendNumber(number) {
   }
   updateDisplay();
 }
+function appendOperator(op) {
+  if (operator !== null) {
+      calculateResult();
+  }
+  operator = op
+  previousInput = currentInput
+  currentInput = "0"
+}
+
 function clearDisplay() {
   currentInput = "0";
   operator = null;
@@ -68,11 +81,4 @@ function calculateResult() {
   updateResult()
 }
 
-function appendOperator(op) {
-    if (operator !== null) {
-        calculateResult();
-    }
-    operator = op
-    previousInput = currentInput
-    currentInput = "0"
-}
+
