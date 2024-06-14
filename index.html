@@ -14,26 +14,42 @@
         <div class="content pt-20 px-4">
             <h1 class="text-right text-6xl text-gray-700" id="result" >0</h1>
             <p class="text-gray-400 text-right pt-2 text-xl" id="display">0</p>
-            <div class="btn flex flex-wrap justify-between gap-4 gap-y-2">
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="clearDisplay()"> AC</button>
-            <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="DelNumber()"><img src="/Images/cross.png" alt=""></button>
-            <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('%')" > %</button>
-            <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" >/</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('7')" > 7</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="appendNumber('8')"> 8</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('9')"> 9</button>
-            <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('*')" >x</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('4')" > 4</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('5')" >5</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('6')" > 6</button>
-            <button class="text-gray-400 font-semibold text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('-')">-</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('1')">1</button>
-            <button class="text-gray-400  text-lg shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('2')">2</button>
-            <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('3')">3</button>
-            <button class="text-gray-400  text-lG font-semibold shadow-2xl px-4 py-2 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('+')">+</button>
-            <button class="text-gray-400  text-lG shadow-2xl px-4 py-2 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('0')"> 0</button>
-            <button class="text-gray-400 font-semibold text-lG shadow-2xl px-4 py-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" >.</button>
-            <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[7.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="calculateResult()" >=</button>
+            <div id="btn-1">
+                <div id="btn1" class="btn flex flex-wrap justify-between gap-4 gap-y-2">
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="clearDisplay()"> AC</button>
+                    <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="DelNumber()"><img src="/Images/cross.png" alt=""></button>
+                    <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('%')" > %</button>
+                    <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('/')" >/</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('7')" > 7</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="appendNumber('8')"> 8</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('9')"> 9</button>
+                    <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('*')" >x</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('4')" > 4</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('5')" >5</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('6')" > 6</button>
+                    <button class="text-gray-400 font-semibold text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('-')">-</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('1')">1</button>
+                    <button class="text-gray-400  text-lg shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('2')">2</button>
+                    <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('3')">3</button>
+                    <button class="text-gray-400  text-lG font-semibold shadow-2xl px-4 py-2 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('+')">+</button>
+                    <button class="text-gray-400  text-lG shadow-2xl px-4 py-2 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('0')"> 0</button>
+                    <button class="text-gray-400 font-semibold text-lG shadow-2xl px-4 py-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="appendNumber('.')">.</button>
+                    <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[7.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="calculateResult()" >=</button>
+                     <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="toggleDivs()" >=</button>
+                     <button id="toggleButton" class="bg-blue-500 text-white p-2 rounded flex items-center justify-center hover:bg-blue-700 focus:outline-none" onclick="toggleDivs()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>  
+                    </div>
+            </div>
+            <div id="btn2" class="btn-2 hidden">
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="DelNumber()"><img src="/Images/cross.png" alt=""></button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('%')" > %</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('/')" >/</button>
+                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('7')" > 7</button>
+                <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="toggleDivs()" >=</button>
+                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="appendNumber('8')"> 8</button>
             </div>
         </div>  
         </div>

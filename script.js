@@ -8,8 +8,8 @@ let dotExist = false;
 function updateDisplay() {
   display.innerText = currentInput;
 }
-function updateResult(){
-  res.innerHTML =  currentInput
+function updateResult() {
+  res.innerHTML = currentInput;
 }
 
 function clearDisplay() {
@@ -19,25 +19,32 @@ function clearDisplay() {
   updateDisplay();
 }
 
-function DelNumber(){
-  display.value= display.value.slice(0, -1);
+function DelNumber() {
+  display.value = display.value.slice(0, -1);
 }
 
-function appendNumber(number) {
+function appendNumber(num) {
   if (currentInput === "0") {
-    currentInput = number;
+    console.log("dotExist -> ", dotExist);
+    currentInput = num;
   } else {
-    currentInput += number;
+    if (dotExist == false || num != ".") {
+      console.log("dotExist -> ", dotExist);
+      currentInput = currentInput + num;
+      if (num == ".") {
+        dotExist = true;
+      }
+    }
   }
   updateDisplay();
 }
 function appendOperator(op) {
   if (operator !== null) {
-      calculateResult();
+    calculateResult();
   }
-  operator = op
-  previousInput = currentInput
-  currentInput = "0"
+  operator = op;
+  previousInput = currentInput;
+  currentInput = "0";
 }
 
 function clearDisplay() {
@@ -46,39 +53,51 @@ function clearDisplay() {
   previousInput = null;
   dotExist = false;
   updateDisplay();
+  updateResult();
 }
 
 function calculateResult() {
   if (operator === null || previousInput === null) {
-      return;
+    return;
   }
   let result;
   const prev = parseFloat(previousInput);
   const curr = parseFloat(currentInput);
 
   switch (operator) {
-      case '+':
-          result = prev + curr;
-          break;
-      case '-':
-          result = prev - curr;
-          break;
-      case '*':
-          result = prev * curr;
-          break;
-      case '/':
-          result = prev / curr;
-          break;
-          case '%':
-          result = prev % curr;
-          break;
-      default:
-          return;
+    case "+":
+      result = prev + curr;
+      break;
+    case "-":
+      result = prev - curr;
+      break;
+    case "*":
+      result = prev * curr;
+      break;
+    case "/":
+      result = prev / curr;
+      break;
+    case "%":
+      result = prev % curr;
+      break;
+    default:
+      return;
   }
   currentInput = result.toString();
   operator = null;
   previousInput = null;
-  updateResult()
+  updateResult();
 }
 
+function toggleDivs() {
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
 
+  if (btn1.classList.contains("hidden")) {
+      btn1.classList.remove("hidden");
+      btn2.classList.add("hidden");
+  } else {
+      btn1.classList.add("hidden");
+      btn2.classList.remove("hidden");
+  }
+}
