@@ -10,11 +10,12 @@
 
 <body class="m-0 p-0 box-border bg-orange-300">
     <div class="main flex justify-center items-center h-screen">
-        <div class="calculator bg-[#f1f2f3] w-[19rem] h-[93vh] rounded-2xl">
+        <div class="calculator bg-[#f1f2f3] max-w-[19rem] h-[93vh] rounded-2xl">
         <div class="content pt-20 px-4">
-            <h1 class="text-right text-6xl text-gray-700" id="result" >0</h1>
-            <p class="text-gray-400 text-right pt-2 text-xl" id="display">0</p>
-            <div id="btn-1">
+            <h1 class="result text-right text-6xl text-gray-700" id="result" name ="result" >0</h1>
+            <!-- <p class="display text-gray-400 text-right pt-2 text-xl" name ="display" id="display">0</p> -->
+             <form action="" name="cacl"><input type="text" class="display text-gray-400 text-right pt-2 text-xl w-full bg-transparent outline-none" name ="text" id="display" placeholder="0"></form>
+            <div id="btn-1 " class="hidden">
                 <div id="btn1" class="btn flex flex-wrap justify-between gap-4 gap-y-2">
                     <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="clearDisplay()"> AC</button>
                     <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="DelNumber()"><img src="/Images/cross.png" alt=""></button>
@@ -43,13 +44,31 @@
                     </button>  
                     </div>
             </div>
-            <div id="btn2" class="btn-2 hidden">
-                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="DelNumber()"><img src="/Images/cross.png" alt=""></button>
-                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('%')" > %</button>
-                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('/')" >/</button>
-                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('7')" > 7</button>
-                <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="toggleDivs()" >=</button>
-                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="appendNumber('8')"> 8</button>
+            <div id="btn2" class="btn-2 flex flex-wrap justify-between gap-4 gap-y-2">
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem] text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="">Inv</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('%')" >Deg</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" id="bracket" ></button>
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('*')" >x</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" id="bracket-R" ></button>
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem] text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="document.cacl.text.value = Math.sin(document.cacl.text.value)">sin</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="document.cacl.text.value = Math.cos(document.cacl.text.value)">cos</button>
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('*')" >x</button>
+                <button class="text-gray-400  text-lG font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="document.cacl.text.value = Math.tan(document.cacl.text.value)" >tan</button>
+                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendNumber('7')" > ln</button>
+                <button  class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"  onclick="document.cacl.text.value = Math.log(document.cacl.text.value)" >log</button>
+                <button class="text-gray-400  text-lg font-semibold shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="appendOperator('*')" >x</button>
+                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="document.cacl.text.value = Math.pow(document.cacl.text.value,2)">x<sup>2</sup></button>
+                <button class="text-gray-400  text-lG shadow-2xl p-4 rounded-lg w-[3.3rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"   onclick="document.cacl.text.value = Math.pow(document.cacl.text.value,1/2)">&radic;</button>
+                <button class="text-white font-semibold  text-lG shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[7.5rem]" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="calculateResult()" >=</button>
+
+
+<br>
+
+
+
+
+                <button class="text-white    shadow-2xl bg-orange-400 px-4 py-3 rounded-lg w-[.5rem]"  style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" onclick="toggleDivs()">back</button>
+
             </div>
         </div>  
         </div>

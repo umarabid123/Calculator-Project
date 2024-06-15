@@ -1,3 +1,5 @@
+document.getElementById("bracket").innerHTML = "(";
+document.getElementById("bracket-R").innerHTML = ")";
 let display = document.getElementById("display");
 let res = document.getElementById("result");
 let currentInput = "0";
@@ -6,7 +8,7 @@ let previousInput = null;
 let dotExist = false;
 
 function updateDisplay() {
-  display.innerText = currentInput;
+  display.value = currentInput;
 }
 function updateResult() {
   res.innerHTML = currentInput;
@@ -19,8 +21,13 @@ function clearDisplay() {
   updateDisplay();
 }
 
-function DelNumber() {
-  display.value = display.value.slice(0, -1);
+// function DelNumber() {
+//   display.value = display.value.slice(0, -1);
+// }
+
+function DelNumber (){
+  let a =document.cacl.text.value;
+  document.cacl.text.value = a.substr(0, a.length-1);
 }
 
 function appendNumber(num) {
@@ -100,4 +107,13 @@ function toggleDivs() {
       btn1.classList.add("hidden");
       btn2.classList.remove("hidden");
   }
+}
+function calculateTrig(func) {
+  const result = document.getElementById('display');
+  result.value += ` ${func} `;
+}
+
+// for sin
+function calculateSine() {
+ res.value = Math.sin(result.value)
 }
