@@ -1,5 +1,7 @@
-document.getElementById("bracket").innerHTML = "(";
-document.getElementById("bracket-R").innerHTML = ")";
+
+
+let leftBracket = document.getElementById('bracket').innerHTML ='('
+let rightBracket =document.getElementById("bracket-R").innerHTML = ")";
 let display = document.getElementById("display");
 let res = document.getElementById("result");
 let currentInput = "0";
@@ -25,11 +27,16 @@ function clearDisplay() {
 //   display.value = display.value.slice(0, -1);
 // }
 
-function DelNumber (){
+function DelNumber(){
   let a =document.cacl.text.value;
   document.cacl.text.value = a.substr(0, a.length-1);
 }
-
+function bracket(){
+  display.value +='('
+}
+function bracketRight(){
+  display.value +=')'
+}
 function appendNumber(num) {
   if (currentInput === "0") {
     console.log("dotExist -> ", dotExist);
@@ -53,6 +60,39 @@ function appendOperator(op) {
   previousInput = currentInput;
   currentInput = "0";
 }
+ function sin(){
+  document.cacl.text.value = Math.sin(document.cacl.text.value);
+  res.innerHTML =document.cacl.text.value
+ }
+ function cos(){
+  document.cacl.text.value = Math.cos(document.cacl.text.value);
+  res.innerHTML =document.cacl.text.value
+ }
+ function tan(){
+  document.cacl.text.value = Math.tan(document.cacl.text.value);
+  res.innerHTML =document.cacl.text.value
+ }
+ function log(){
+  document.cacl.text.value = Math.log(document.cacl.text.value);
+  res.innerHTML =document.cacl.text.value
+ }
+ function powerTwo(){
+  document.cacl.text.value = Math.pow(document.cacl.text.value,2)
+  res.innerHTML =  document.cacl.text.value
+ }
+ function powerThree(){
+  document.cacl.text.value = Math.pow(document.cacl.text.value,3)
+  res.innerHTML =  document.cacl.text.value
+ }
+
+ function sqrt(){
+  document.cacl.text.value = Math.pow(document.cacl.text.value,1/2)
+  res.innerHTML =  document.cacl.text.value
+ }
+ function sqrtThree(){
+  document.cacl.text.value = Math.pow(document.cacl.text.value,1/3)
+  res.innerHTML =  document.cacl.text.value
+ }
 
 function clearDisplay() {
   currentInput = "0";
@@ -111,9 +151,4 @@ function toggleDivs() {
 function calculateTrig(func) {
   const result = document.getElementById('display');
   result.value += ` ${func} `;
-}
-
-// for sin
-function calculateSine() {
- res.value = Math.sin(result.value)
 }
